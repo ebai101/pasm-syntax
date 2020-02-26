@@ -1,0 +1,64 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "PASM",
+	"patterns": [
+		{
+			"include": "#keywords"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"match": "\\b(ADD|ADC|SUB|SUC|RSB|RSC|LSL|LSR|AND|OR|XOR|NOT|MIN|MAX|CLR|SET|SCAN|LMBD|MOV|LDI|MVIB|MVIW|MVID|LBBO|SBBO|LBCO|SBCO|LFC|STC|ZERO|JMP|JAL|CALL|RET|QBGT|QBGE|QBLT|QBLE|QBEQ|QBNE|QBA|QBBS|QBBC|WBS|WBC|HALT|SLP|LOOP|add|adc|sub|suc|rsb|rsc|lsl|lsr|and|or|xor|not|min|max|clr|set|scan|lmbd|mov|ldi|mvib|mviw|mvid|lbbo|sbbo|lbco|sbco|lfc|stc|zero|jmp|jal|call|ret|qbgt|qbge|qblt|qble|qbeq|qbne|qba|qbbs|qbbc|wbs|wbc|halt|slp|loop)\\b",
+					"name": "entity.name.function"
+				  },
+				  {
+					"match": "\\.origin|\\.entrypoint|\\.setcallreg|\\.macro|\\.mparam|\\.endm|\\.struct|\\.ends|\\.u8|\\.u16|\\.u32|\\.assign|\\.enter|\\.leave|\\.using",
+					"name": "entity.name.function"
+				  },
+				  {
+					"match": "(#include|#define|#undef|#error|#ifdef|#ifndef|#endif|#else)",
+					"name": "keyword.control.import.include"
+				  },
+				  {
+					"match": "\\b[0-9]+\\b",
+					"name": "constant.numeric"
+				  },
+				  {
+					"match": "\\b(0x[0-9A-Fa-f]+)\\b",
+					"name": "constant.numeric"
+				  },
+				  {
+					"match": "\\b(0b[01]+)\\b",
+					"name": "constant.numeric"
+				  },
+				  {
+					"match": "([0-9a-zA-Z_]+)(:)",
+					"name": "keyword.control"
+				  },
+				  {
+					"match": "([rR]\\d\\d?)",
+					"name": "storage"
+				  },
+				  {
+					"match": "([cC]\\d\\d?)",
+					"name": "storage.type"
+				  },
+				  {
+					"match": "\\.[tw]\\d\\d?",
+					"name": "storage.type"
+				  },
+				  {
+					"match": "\\\".*\\\"",
+					"name": "string"
+				  },
+				  {
+					  "match": "//.*$",
+					  "name": "comment"
+				  }
+			]
+		}
+	},
+	"scopeName": "source.pasm"
+}

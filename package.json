@@ -1,0 +1,38 @@
+{
+    "name": "pasm-syntax",
+    "displayName": "PASM Syntax",
+    "description": "PRU assembly syntax highlighting",
+    "version": "0.0.1",
+    "publisher": "ebai101",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "pasm",
+                "aliases": [
+                    "PASM",
+                    "pasm"
+                ],
+                "extensions": [
+                    ".p"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pasm",
+                "scopeName": "source.pasm",
+                "path": "./syntaxes/pasm.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "js-yaml": "^3.13.1"
+    }
+}
